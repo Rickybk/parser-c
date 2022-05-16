@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1652712967 source:c:\users\doria\desktop\lector\main.c
+1652739159 source:c:\users\doria\desktop\lector\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 

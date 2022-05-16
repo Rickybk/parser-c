@@ -31,8 +31,8 @@ int main()
     }
     printf("El numero total de lineas es: %d\n",contador);
     printf("Aca empezamos a mostrar el arreglo que guardamos\n");
-    printf("Aca mostrare si test es una variable global: ");
-    separador();
+    printf("Aca mostrare una linea separada: \n");
+    separador(arregloLog[0]);
     printf("\n");
     for(i = 0; i < contador; i++)
     {
@@ -41,6 +41,12 @@ int main()
     return 0;
 }
 
-void separador(){
-    printf("%d",test);
+void separador(char linea[]){
+    char *token;
+    token = strtok(linea," ");
+    while(token != NULL){
+        printf(" %s\n",token);
+        token = strtok(NULL," ");
+    }
+    printf("Termina de separar\n");
 }
