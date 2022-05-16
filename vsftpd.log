@@ -1,0 +1,10 @@
+Sun May 15 20:59:44 2022 [pid 6214] CONNECT: Client "::ffff:192.168.100.2"
+Sun May 15 20:59:48 2022 [pid 6213] [aso1] OK LOGIN: Client "::ffff:192.168.100.2"
+Sun May 15 21:00:49 2022 [pid 6215] [aso1] OK UPLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/dog.jpg", 29678 bytes, 4298.15Kbyte/sec
+Sun May 15 21:00:52 2022 [pid 6215] [aso1] OK UPLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/ej1.jpg", 64153 bytes, 10333.07Kbyte/sec
+Sun May 15 21:00:53 2022 [pid 6215] [aso1] OK UPLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/ej2.jpg", 89305 bytes, 13229.96Kbyte/sec
+Sun May 15 21:00:54 2022 [pid 6215] [aso1] OK UPLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/servidores.jpg", 85023 bytes, 12169.17Kbyte/sec
+Sun May 15 21:01:12 2022 [pid 6215] [aso1] OK DOWNLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/dog.jpg", 29678 bytes, 31883.85Kbyte/sec
+Sun May 15 21:01:14 2022 [pid 6215] [aso1] OK DOWNLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/ej1.jpg", 64153 bytes, 48490.26Kbyte/sec
+Sun May 15 21:01:15 2022 [pid 6215] [aso1] OK DOWNLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/ej2.jpg", 89305 bytes, 66777.88Kbyte/sec
+Sun May 15 21:01:15 2022 [pid 6215] [aso1] OK DOWNLOAD: Client "::ffff:192.168.100.2", "/ftp/imagenes/servidores.jpg", 85023 bytes, 62664.36Kbyte/sec
