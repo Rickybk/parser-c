@@ -3,8 +3,11 @@
 #include <string.h>
 int main()
 {
+    //Tamano max de la linea que almacenemos
     const int TAMANO_MAX_LINE  = 300;
+    //Tamano max del numero de lineas que podamos almacenar
     const int TAMANO_MAX_ARRAY = 5000;
+    //Contador ayuda a saber cuantas lineas tenemos almacenadas
     int contador = 0;
     int i;
     //Definimos el arreglo donde se guardara todo el Log.
@@ -24,22 +27,12 @@ int main()
         //print the line
         printf("%s", line);
     }
-    //printf("El tamano final de nuestro arreglo es: %d\n",sizeof(arregloLog));
     printf("El numero total de lineas es: %d\n",contador);
     printf("Aca empezamos a mostrar el arreglo que guardamos\n");
     for(i = 0; i < contador; i++)
     {
 
         printf("%s",arregloLog[i]);
-        /*if(arregloLog[i] != '/0')
-        {
-            if(i%2 == 0)
-            {
-                printf("%s",arregloLog[i]);
-            }
-        } else {
-            break;
-        }*/
     }
     return 0;
 }
