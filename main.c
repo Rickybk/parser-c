@@ -22,12 +22,12 @@ int main()
         //print the line
         printf("%s", line);
     }
-
-    printf("Aca empezamos a mostrar el arreglo que guardamos");
+    printf("El tamano final de nuestro arreglo es: %d",sizeof(arregloLog));
+    /*printf("Aca empezamos a mostrar el arreglo que guardamos");
     for(i = 0; i< sizeof(arregloLog); i++){
         if(i%2 == 0){
             printf("%s",arregloLog[i]);
         }
-    }
+    }*/
     return 0;
 }
