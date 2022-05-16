@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+int test = 10;
 int main()
 {
     //Tamano max de la linea que almacenemos
@@ -29,10 +31,16 @@ int main()
     }
     printf("El numero total de lineas es: %d\n",contador);
     printf("Aca empezamos a mostrar el arreglo que guardamos\n");
+    printf("Aca mostrare si test es una variable global: ");
+    separador();
+    printf("\n");
     for(i = 0; i < contador; i++)
     {
-
         printf("%s",arregloLog[i]);
     }
     return 0;
+}
+
+void separador(){
+    printf("%d",test);
 }
