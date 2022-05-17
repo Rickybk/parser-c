@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+char dia[3];
+char mes[3];
+int diaN;
+char hora[8];
+int anio;
+char usuario[16];
+char ip[23];
 int test = 10;
 int main()
 {
