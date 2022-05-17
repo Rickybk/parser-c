@@ -39,7 +39,7 @@ int main()
     printf("El numero total de lineas es: %d\n",contador);
     printf("Aca empezamos a mostrar el arreglo que guardamos\n");
     printf("Aca mostrare una linea separada: \n");
-    separador(arregloLog[0]);
+    //separador(arregloLog[0]);
     printf("\n");
     printf("Aca mostrare la segunda linea: \n");
     separador(arregloLog[1]);
@@ -50,12 +50,29 @@ int main()
     return 0;
 }
 
-void separador(char linea[]){
+void separador(char linea[])
+{
+    int contador = 0;
     char *token;
     token = strtok(linea," ");
-    while(token != NULL){
+    while(token != NULL)
+    {
         printf(" %s\n",token);
-        token = strtok(NULL," ");
+        if(contador == 5){
+            //printf("Estoy en el if 1 %s\n",token);
+            token = strtok(NULL,"]");
+            //printf("Estoy en el if 2 %s\n",token);
+            contador++;
+        }
+        else{
+            token = strtok(NULL," ");
+            contador++;
+        }
     }
     printf("Termina de separar\n");
+}
+
+void separadorSimple(char linea[])
+{
+
 }
