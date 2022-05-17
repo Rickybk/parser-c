@@ -34,10 +34,12 @@ int main()
     printf("Aca mostrare una linea separada: \n");
     separador(arregloLog[0]);
     printf("\n");
-    for(i = 0; i < contador; i++)
+    printf("Aca mostrare la segunda linea: \n");
+    separador(arregloLog[1]);
+    /*for(i = 0; i < contador; i++)
     {
         printf("%s",arregloLog[i]);
-    }
+    }*/
     return 0;
 }
 
