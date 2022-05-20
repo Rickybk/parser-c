@@ -75,14 +75,14 @@ void separadorDeLineas(char linea[])
     printf("Contador: %d",contador);
     printf("Prueba de impresion\n");
     printf("[0]:%s\n",lineaLog[1]);
-    //separadorDeVariables(lineaLog,contador);
+    separadorDeVariables(contador);
 }
 
-void separadorDeVariables(char linea[],int contador)
+void separadorDeVariables(int contador)
 {
     printf("contador:%d\n",contador);
     int i;
     for(i = 0; i< contador; i++){
-        printf("%c\n",linea[i]);
+        printf("%s\n", lineaLog[i]);
     }
 }
