@@ -14,6 +14,8 @@ int diaN;
 char hora[8];
 int anio;
 char usuario[16];
+char estado[4];
+char accion[10];
 char ip[23];
 int test = 10;
 int main()
@@ -72,9 +74,9 @@ void separadorDeLineas(char linea[])
     }
     printf("Termina de separar\n");
     printf("Probando el nuevo array separado\n");
-    printf("Contador: %d",contador);
+    printf("Contador: %d\n",contador);
     printf("Prueba de impresion\n");
-    printf("[0]:%s\n",lineaLog[1]);
+    //printf("[0]:%s\n",lineaLog[1]);
     separadorDeVariables(contador);
 }
 
@@ -83,6 +85,17 @@ void separadorDeVariables(int contador)
     printf("contador:%d\n",contador);
     int i;
     for(i = 0; i< contador; i++){
+
         printf("%s\n", lineaLog[i]);
     }
+    strcpy(dia,lineaLog[0]);
+    strcpy(mes,lineaLog[1]);
+    diaN = atoi(lineaLog[2]);
+    strcpy(hora,lineaLog[3]);
+    anio = atoi(lineaLog[4]);
+    strcpy(usuario,lineaLog[7]);
+    strcpy(estado,lineaLog[8]);
+    strcpy(accion,lineaLog[9]);
+    strcpy(ip,lineaLog[10]);
+    printf("Variable dia = %s\n",usuario);
 }
