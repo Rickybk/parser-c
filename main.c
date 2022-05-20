@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+//Cantidad de variables extraidas de cada la linea Log.
+static int NUMERO_VAR_LOG = 20;
+//Tamano maximo de cada variable extraida de la linea Log.
+static int NUMERO_TAM_VAR = 35;
+//Definimos un arreglo donde guardaremos todas las variables extraidas de cada linea del Log.
+char lineaLog[20][35];
 char dia[3];
 char mes[3];
 int diaN;
@@ -21,6 +27,7 @@ int main()
     int i;
     //Definimos el arreglo donde se guardara todo el Log.
     char arregloLog[TAMANO_MAX_ARRAY][TAMANO_MAX_LINE];
+
     FILE *fileLog =fopen("vsftpd.log", "r");
     if(fileLog == NULL)
     {
@@ -42,7 +49,7 @@ int main()
     //separador(arregloLog[0]);
     printf("\n");
     printf("Aca mostrare la segunda linea: \n");
-    separador(arregloLog[1]);
+    separadorDeLineas(arregloLog[2]);
     /*for(i = 0; i < contador; i++)
     {
         printf("%s",arregloLog[i]);
@@ -50,7 +57,7 @@ int main()
     return 0;
 }
 
-void separador(char linea[])
+void separadorDeLineas(char linea[])
 {
     int contador = 0;
     char *token;
@@ -58,21 +65,24 @@ void separador(char linea[])
     while(token != NULL)
     {
         printf(" %s\n",token);
-        if(contador == 5){
-            //printf("Estoy en el if 1 %s\n",token);
-            token = strtok(NULL,"]");
-            //printf("Estoy en el if 2 %s\n",token);
-            contador++;
-        }
-        else{
-            token = strtok(NULL," ");
-            contador++;
-        }
+        strcpy(lineaLog[contador],token);
+        token = strtok(NULL," ");
+        contador++;
+
     }
     printf("Termina de separar\n");
+    printf("Probando el nuevo array separado\n");
+    printf("Contador: %d",contador);
+    printf("Prueba de impresion\n");
+    printf("[0]:%s\n",lineaLog[1]);
+    //separadorDeVariables(lineaLog,contador);
 }
 
-void separadorSimple(char linea[])
+void separadorDeVariables(char linea[],int contador)
 {
-
+    printf("contador:%d\n",contador);
+    int i;
+    for(i = 0; i< contador; i++){
+        printf("%c\n",linea[i]);
+    }
 }
