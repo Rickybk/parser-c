@@ -12,14 +12,19 @@ int main(void){
       return 1;
    }
    char *sql="DROP TABLE IF EXISTS Registro;"
-             "CREATE TABLE Registro(IdRegistro INT, NombreReg VARCHAR, Descripcion VARCHAR, Subida BOOLEAN,
-                                    Bajada BOOLEAN, Velocida DOUBLE, Tamaño DOUBLE, Tipo VARCHAR);"
+             "CREATE TABLE Registro(IdRegistro INT PRIMARY KEY AUTOINCREMENT, NombreReg VARCHAR, Descripcion VARCHAR, 
+                                    Subida BOOLEAN, Bajada BOOLEAN, Velocida DOUBLE, Tamaño DOUBLE, Tipo VARCHAR);"
 
    char *sql="DROP TABLE IF EXISTS Fecha;"
-             "CREATE TABLE Fecha(fechaReg DATE);"
+             "CREATE TABLE Fecha(fechaReg DATE, 
+                                 ID_Registro INT,
+                                 FOREING KEY(ID_Registro)REFERENCES Registro(IdRegistro));"
 
    char *sql="DROP TABLE IF EXISTS Usuario;"
-             "CREATE TABLE Usuario(IdUsuario INT, NombreUs VARCHAR);"
+             "CREATE TABLE Usuario(IdUsuario INT PRIMARY KEY AUTOINCREMENT,
+                                   NombreUs VARCHAR,
+                                   Id_Registro INT,
+                                   FOREING KEY (Id_Registro) REFERENCES Registro(IdRegistro));"
 
 
    rc=sqlite3_exec(db, sql, 0, 0, &err_msg);
