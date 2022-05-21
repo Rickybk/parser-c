@@ -17,6 +17,9 @@ char usuario[16];
 char estado[4];
 char accion[10];
 char ip[23];
+char rutaFile[50];
+int peso;
+char velocidad[20];
 int test = 10;
 int main()
 {
@@ -96,6 +99,13 @@ void separadorDeVariables(int contador)
     strcpy(usuario,lineaLog[7]);
     strcpy(estado,lineaLog[8]);
     strcpy(accion,lineaLog[9]);
-    strcpy(ip,lineaLog[10]);
-    printf("Variable dia = %s\n",usuario);
+    accion[strlen(accion)-1]= '\0';
+    strcpy(ip,lineaLog[11]);
+    ip[strlen(ip)-1] = '\0';
+    strcpy(rutaFile,lineaLog[12]);
+    rutaFile[strlen(rutaFile)-1]= '\0';
+    peso = atoi(lineaLog[13]);
+    strcpy(velocidad,lineaLog[15]);
+    printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, accion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,accion,ip);
+    printf("Ruta = %s, Peso = %d, Velocidad = %s",rutaFile,peso,velocidad);
 }
