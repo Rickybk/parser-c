@@ -11,7 +11,7 @@ char lineaLog[20][35];
 char dia[3];
 char mes[3];
 int diaN;
-char hora[8];
+char hora[5];
 int anio;
 char usuario[16];
 char estado[4];
@@ -21,6 +21,8 @@ char rutaFile[50];
 int peso;
 char velocidad[20];
 int test = 10;
+char anios[25];
+char mesN[3] = "05";
 int main()
 {
     //Tamano max de la linea que almacenemos
@@ -91,10 +93,12 @@ void separadorDeVariables(int contador)
 
         printf("%s\n", lineaLog[i]);
     }
+    //itoa(mes,)
     strcpy(dia,lineaLog[0]);
     strcpy(mes,lineaLog[1]);
     strcpy(hora,lineaLog[3]);
     anio = atoi(lineaLog[4]);
+    strcpy(anios,lineaLog[4]);
     strcpy(usuario,lineaLog[7]);
     strcpy(estado,lineaLog[8]);
     strcpy(accion,lineaLog[9]);
@@ -106,6 +110,14 @@ void separadorDeVariables(int contador)
     peso = atoi(lineaLog[13]);
     strcpy(velocidad,lineaLog[15]);
     diaN = atoi(lineaLog[2]);
+    strcat(anios,"-");
+    strcat(anios,"05");
+    strcat(anios,"-");
+    strcat(anios,lineaLog[2]);
+    strcat(anios," ");
+    strcat(anios,lineaLog[3]);
+    printf("Hora: %s\n",lineaLog[3]);
     printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, accion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,accion,ip);
-    printf("Ruta = %s, Peso = %d, Velocidad = %s",rutaFile,peso,velocidad);
+    printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
+    printf("Concatenacion = %s",anios);
 }
