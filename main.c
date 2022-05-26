@@ -15,7 +15,7 @@ char hora[5];
 int anio;
 char usuario[16];
 char estado[4];
-char accion[10];
+char descripcion[23];
 char ip[23];
 char rutaFile[50];
 int peso;
@@ -51,16 +51,10 @@ int main()
         printf("%s", line);
     }
     printf("El numero total de lineas es: %d\n",contador);
-    printf("Aca empezamos a mostrar el arreglo que guardamos\n");
-    printf("Aca mostrare una linea separada: \n");
-    //separador(arregloLog[0]);
-    printf("\n");
-    printf("Aca mostrare la segunda linea: \n");
-    separadorDeLineas(arregloLog[2]);
-    /*for(i = 0; i < contador; i++)
-    {
-        printf("%s",arregloLog[i]);
-    }*/
+
+    printf("Aca mostrare la consulta final: \n");
+    separadorDeLineas(arregloLog[0]);
+
     return 0;
 }
 
@@ -71,29 +65,30 @@ void separadorDeLineas(char linea[])
     token = strtok(linea," ");
     while(token != NULL)
     {
-        printf(" %s\n",token);
+        //printf(" %s\n",token);
         strcpy(lineaLog[contador],token);
         token = strtok(NULL," ");
         contador++;
 
     }
-    printf("Termina de separar\n");
-    printf("Probando el nuevo array separado\n");
-    printf("Contador: %d\n",contador);
-    printf("Prueba de impresion\n");
+    //printf("Termina de separar\n");
+    //printf("Probando el nuevo array separado\n");
+    //printf("Contador: %d\n",contador);
+    //printf("Prueba de impresion\n");
     //printf("[0]:%s\n",lineaLog[1]);
     separadorDeVariables(contador);
 }
 
 void separadorDeVariables(int contador)
 {
-    printf("contador:%d\n",contador);
+    //printf("Contador:%d\n",contador);
     int i;
     for(i = 0; i< contador; i++){
 
-        printf("%s\n", lineaLog[i]);
+        //printf("%s\n", lineaLog[i]);
     }
     //itoa(mes,)
+    printf("\n");
     strcpy(dia,lineaLog[0]);
     strcpy(mes,lineaLog[1]);
     strcpy(hora,lineaLog[3]);
@@ -101,8 +96,8 @@ void separadorDeVariables(int contador)
     strcpy(anios,lineaLog[4]);
     strcpy(usuario,lineaLog[7]);
     strcpy(estado,lineaLog[8]);
-    strcpy(accion,lineaLog[9]);
-    accion[strlen(accion)-1]= '\0';
+    strcpy(descripcion,lineaLog[9]);
+    descripcion[strlen(descripcion)-1]= '\0';
     strcpy(ip,lineaLog[11]);
     ip[strlen(ip)-1] = '\0';
     strcpy(rutaFile,lineaLog[12]);
@@ -116,8 +111,8 @@ void separadorDeVariables(int contador)
     strcat(anios,lineaLog[2]);
     strcat(anios," ");
     strcat(anios,lineaLog[3]);
-    printf("Hora: %s\n",lineaLog[3]);
-    printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, accion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,accion,ip);
-    printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
-    printf("Concatenacion = %s",anios);
+    //printf("Hora: %s\n",lineaLog[3]);
+    //printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, Descripcion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,descripcion,ip);
+    //printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
+    printf("Fecha = %s, Usuario = %s, Estado = %s, Descripcion = %s, Ruta = %s, Peso = %d, Velocidad = %s\n",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
 }
