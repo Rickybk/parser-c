@@ -51,10 +51,14 @@ int main()
         printf("%s", line);
     }
     printf("El numero total de lineas es: %d\n",contador);
+    printf("\n");
+    //printf("Aca mostrare la consulta final: \n");
+    printf("Procedere a iterar todas las lineas y mostrarlas con formato para consulta Sqlite : \n");
+    //separadorDeLineas(arregloLog[0]);
 
-    printf("Aca mostrare la consulta final: \n");
-    separadorDeLineas(arregloLog[0]);
-
+    for(int i = 0; i<contador; i++){
+        separadorDeLineas(arregloLog[i]);
+    }
     return 0;
 }
 
@@ -115,4 +119,5 @@ void separadorDeVariables(int contador)
     //printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, Descripcion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,descripcion,ip);
     //printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
     printf("Fecha = %s, Usuario = %s, Estado = %s, Descripcion = %s, Ruta = %s, Peso = %d, Velocidad = %s\n",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
+    contador = 0;
 }
