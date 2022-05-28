@@ -100,6 +100,9 @@ void separadorDeVariables(int contador)
     anio = atoi(lineaLog[4]);
     strcpy(anios,lineaLog[4]);
     strcpy(usuario,lineaLog[7]);
+    if(usuario[strlen(usuario)-1]==':'){
+        usuario[strlen(usuario)-1]= '\0';
+    }
     strcpy(estado,lineaLog[8]);
     strcpy(descripcion,lineaLog[9]);
     descripcion[strlen(descripcion)-1]= '\0';
@@ -117,12 +120,12 @@ void separadorDeVariables(int contador)
     strcat(anios,lineaLog[2]);
     strcat(anios," ");
     strcat(anios,lineaLog[3]);
-    //printf("Hora: %s\n",lineaLog[3]);
-    //printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, Descripcion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,descripcion,ip);
-    //printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
-    //printf("Fecha = %s, Usuario = %s, Estado = %s, Descripcion = %s, Ruta = %s, Peso = %d, Velocidad = %s\n",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
+
+    //printf("Prueba usuario : %c",usuario[strlen(usuario)-1]);
+
     contador = 0;
     //char *sql = sqlConsulta;
     sprintf(sqlConsulta,"INSERT INTO Registro VALUES ('%s', '%s', '%s', '%s', '%s', %d, '%s');",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
     printf("Prueba consulta: %s",sqlConsulta);
+
 }
