@@ -8,6 +8,7 @@ static int NUMERO_VAR_LOG = 20;
 static int NUMERO_TAM_VAR = 35;
 //Definimos un arreglo donde guardaremos todas las variables extraidas de cada linea del Log.
 char lineaLog[20][35];
+char sqlConsulta[100];
 char dia[3];
 char mes[3];
 int diaN;
@@ -108,6 +109,7 @@ void separadorDeVariables(int contador)
     rutaFile[strlen(rutaFile)-1]= '\0';
     peso = atoi(lineaLog[13]);
     strcpy(velocidad,lineaLog[15]);
+    velocidad[strlen(velocidad)-1] = '\0';
     diaN = atoi(lineaLog[2]);
     strcat(anios,"-");
     strcat(anios,"05");
@@ -118,6 +120,9 @@ void separadorDeVariables(int contador)
     //printf("Hora: %s\n",lineaLog[3]);
     //printf("dia = %s, mes = %s, diaN = %d, hora = %s, anio = %d, usuario = %s, estado = %s, Descripcion = %s, ip = %s\n",dia,mes,diaN,hora,anio,usuario,estado,descripcion,ip);
     //printf("Ruta = %s, Peso = %d, Velocidad = %s\n",rutaFile,peso,velocidad);
-    printf("Fecha = %s, Usuario = %s, Estado = %s, Descripcion = %s, Ruta = %s, Peso = %d, Velocidad = %s\n",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
+    //printf("Fecha = %s, Usuario = %s, Estado = %s, Descripcion = %s, Ruta = %s, Peso = %d, Velocidad = %s\n",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
     contador = 0;
+    //char *sql = sqlConsulta;
+    sprintf(sqlConsulta,"INSERT INTO Registro VALUES ('%s', '%s', '%s', '%s', '%s', %d, '%s');",anios,usuario,estado,descripcion,rutaFile,peso,velocidad);
+    printf("Prueba consulta: %s",sqlConsulta);
 }
